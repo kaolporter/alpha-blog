@@ -1,25 +1,29 @@
-<h1>Articles listing page</h1>
+<h1 class="text-3xl">Articles listing page</h1>
+
+<%= link_to 'New Article', new_article_path %>
 
 <table>
     <thead>
         <tr>
             <th>Title</th>
             <th>Description</th>
-            <th>Actions</th>
+            <th colspan="3">Actions</th>
         </tr>
     </thead>
     <tbody>
         <% @articles.each do |article| %>
         <tr>
-            <th>
+            <td>
                 <%= article.title %>
-            </th>
-            <th>
+            </td>
+            <td>
                 <%= article.description %>
-            </th>
-            <th>
-                Placeholder
-            </th>
+            </td>
+            <td> <%= link_to 'Show', article_path(article) %></td>
+            <td> <%= link_to 'Edit', edit_article_path(article) %></td>
+            <td>
+                <%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </td>
         </tr>
         <% end %>
     </tbody>
