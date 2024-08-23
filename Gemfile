@@ -61,3 +61,7 @@ group :production do
 end
 
 gem "tailwindcss-rails", "~> 2.7"
+
+gem "devise", "~> 4.9"
+
+gem 'email_validator'  
