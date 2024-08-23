@@ -1,7 +1,10 @@
-<h1>Articles listing page</h1>
+<div class="container mx-auto bg-gray-700 text-white">
+    <h1>Articles listing page</h1>
+</div>
 
-<table>
-    <thead>
+<div class="container">
+<table class="table-auto border-2 w-full">
+    <thead class="bg-gray-500 text-white">
         <tr>
             <th>Title</th>
             <th>Description</th>
@@ -10,7 +13,7 @@
     </thead>
     <tbody>
         <% @articles.each do |article| %>
-        <tr>
+        <tr class="border-2">
             <td>
                 <%= article.title %>
             </td>
@@ -26,4 +29,7 @@
         <% end %>
     </tbody>
 </table>
+</div>
+<div class="container">
 <%= link_to 'New Article', new_article_path %>
+</div>
